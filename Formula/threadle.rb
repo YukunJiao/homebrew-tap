@@ -1,6 +1,6 @@
 class Threadle < Formula
   desc "High-performance system for large, complex, multilayer network datasets"
-  homepage "https://threadle.dev"
+  homepage "https://github.com/carlnordlund/Threadle"
   url "https://github.com/carlnordlund/Threadle/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "b127da2d9bf0683b310e1ed249953fc69976362bcf0d025c311c5debb99e50fd"
   license "MIT"
