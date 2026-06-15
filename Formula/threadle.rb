@@ -5,6 +5,12 @@ class Threadle < Formula
   sha256 "b127da2d9bf0683b310e1ed249953fc69976362bcf0d025c311c5debb99e50fd"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/YukunJiao/homebrew-tap/releases/download/threadle-1.2.0"
+    sha256 cellar: :any, arm64_tahoe:  "5c5f4607669f9c709be56479a42992b81b740cd18b3cce94a583fd002a64af53"
+    sha256               x86_64_linux: "87b69457125f26ae9b5f17eaf9d5b14798758c4df2cd56e45398fcd7814e4cc6"
+  end
+
   depends_on "dotnet" => :build
   depends_on "brotli"
 
