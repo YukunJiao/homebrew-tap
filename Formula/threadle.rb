@@ -10,7 +10,9 @@ class Threadle < Formula
 
   on_linux do
     depends_on "patchelf" => :build
+    depends_on "icu4c@78"
     depends_on "libunwind"
+    depends_on "zlib-ng-compat"
   end
 
   def install
@@ -35,7 +37,9 @@ class Threadle < Formula
 
     return unless OS.linux?
 
-    system "patchelf", "--set-rpath", Formula["libunwind"].opt_lib, bin/"threadle"
+    system "patchelf", "--set-rpath",
+           "#{Formula["libunwind"].opt_lib}:#{Formula["icu4c@78"].opt_lib}:#{Formula["zlib-ng-compat"].opt_lib}",
+           bin/"threadle"
   end
 
   test do
