@@ -7,6 +7,11 @@ class Threadle < Formula
 
   depends_on "dotnet" => :build
 
+  on_linux do
+    depends_on "patchelf" => :build
+    depends_on "libunwind"
+  end
+
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_NOLOGO"] = "1"
@@ -26,9 +31,13 @@ class Threadle < Formula
            "-o", "publish"
 
     bin.install "publish/threadle"
+
+    return unless OS.linux?
+
+    system "patchelf", "--set-rpath", Formula["libunwind"].opt_lib, bin/"threadle"
   end
 
   test do
-    assert_match "Threadle CLI Console", pipe_output("#{bin}/threadle", "exit\n")
+    assert_match "Threadle CLI Console", pipe_output(bin/"threadle", "exit\n")
   end
 end
