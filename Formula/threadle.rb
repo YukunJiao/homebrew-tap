@@ -6,6 +6,7 @@ class Threadle < Formula
   license "MIT"
 
   depends_on "dotnet" => :build
+  depends_on "brotli"
 
   on_linux do
     depends_on "patchelf" => :build
