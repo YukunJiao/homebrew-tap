@@ -12,7 +12,11 @@ class Threadle < Formula
     ENV["DOTNET_NOLOGO"] = "1"
     ENV["DOTNET_SKIP_FIRST_TIME_EXPERIENCE"] = "1"
 
-    rid = Hardware::CPU.arm? ? "osx-arm64" : "osx-x64"
+    rid = if OS.mac?
+      Hardware::CPU.arm? ? "osx-arm64" : "osx-x64"
+    else
+      Hardware::CPU.arm? ? "linux-arm64" : "linux-x64"
+    end
 
     system "dotnet", "publish", "Threadle.CLIconsole",
            "-c", "Release",
