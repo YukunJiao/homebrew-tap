@@ -2,6 +2,8 @@
 
 ## How do I install these formulae?
 
+First run `brew trust yukunjiao/tap`.
+
 `brew install yukunjiao/tap/<formula>`
 
 Or `brew tap yukunjiao/tap` and then `brew install <formula>`.
