@@ -44,7 +44,7 @@ class Threadle < Formula
     return unless OS.linux?
 
     system "patchelf", "--set-rpath",
-           "#{Formula["libunwind"].opt_lib}:#{Formula["icu4c@78"].opt_lib}:#{Formula["zlib-ng-compat"].opt_lib}",
+           "#{formula_opt_lib("libunwind")}:#{formula_opt_lib("icu4c@78")}:#{formula_opt_lib("zlib-ng-compat")}",
            bin/"threadle"
   end
 
