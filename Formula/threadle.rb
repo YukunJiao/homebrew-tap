@@ -33,11 +33,16 @@ class Threadle < Formula
       Hardware::CPU.arm? ? "linux-arm64" : "linux-x64"
     end
 
+    # Self-contained single-file builds with .NET runtime 10.0.12 or older crash
+    # intermittently (AccessViolationException) in Threadle's parallel analyses on
+    # macOS arm64; 10.0.13 does not. Pin the bundled runtime instead of using
+    # whatever runtime pack the build machine's SDK ships.
     system "dotnet", "publish", "Threadle.CLIconsole",
            "-c", "Release",
            "-r", rid,
            "--self-contained", "true",
            "-p:PublishSingleFile=true",
+           "-p:RuntimeFrameworkVersion=10.0.13",
            "-o", "publish"
 
     bin.install "publish/threadle"
