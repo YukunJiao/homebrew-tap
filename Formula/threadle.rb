@@ -1,8 +1,8 @@
 class Threadle < Formula
   desc "High-performance system for large, complex, multilayer network datasets"
   homepage "https://github.com/carlnordlund/Threadle"
-  url "https://github.com/carlnordlund/Threadle/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "b127da2d9bf0683b310e1ed249953fc69976362bcf0d025c311c5debb99e50fd"
+  url "https://github.com/carlnordlund/Threadle/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "b67b0a03dc7ea5d6b19fd35bd6627efbdcacc969c5120e5605d60d013fff3c00"
   license "MIT"
 
   bottle do
@@ -44,7 +44,7 @@ class Threadle < Formula
     return unless OS.linux?
 
     system "patchelf", "--set-rpath",
-           "#{Formula["libunwind"].opt_lib}:#{Formula["icu4c@78"].opt_lib}:#{Formula["zlib-ng-compat"].opt_lib}",
+           "#{formula_opt_lib("libunwind")}:#{formula_opt_lib("icu4c@78")}:#{formula_opt_lib("zlib-ng-compat")}",
            bin/"threadle"
   end
 
