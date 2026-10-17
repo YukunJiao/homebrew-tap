@@ -7,9 +7,9 @@ class Threadle < Formula
 
   bottle do
     root_url "https://github.com/YukunJiao/homebrew-tap/releases/download/threadle-1.3.0"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:  "73d89b47fead43ca44810442b94214ace2724b5cddb109227e0743c39e5624cf"
-    sha256 cellar: :any, x86_64_linux: "4bdf923c591a70f13199e88eb66da073cba6684546572f7c9148637c78f2eabc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "3523ac37cd2b4467613283f79d8796889e1074ef125e759922bdce4e2c63c92c"
+    sha256 cellar: :any,                 x86_64_linux: "db876e77f1b970bd6bb0e324d10dc80c0ea822fcfb4af677b6545a4f0f5e5a67"
   end
 
   depends_on "dotnet" => :build
