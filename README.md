@@ -1,20 +1,44 @@
-# Yukunjiao Tap
+# YukunJiao Homebrew Tap
 
-## How do I install these formulae?
+Homebrew formulae maintained by [@YukunJiao](https://github.com/YukunJiao).
 
-First run `brew trust yukunjiao/tap`.
+| Formula | Description |
+| --- | --- |
+| [`threadle`](Formula/threadle.rb) | CLI for [Threadle](https://github.com/carlnordlund/Threadle), a high-performance system for large, complex, multilayer network datasets |
 
-`brew install yukunjiao/tap/<formula>`
+## Install Threadle
 
-Or `brew tap yukunjiao/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "yukunjiao/tap"
-brew "<formula>"
+```bash
+brew tap yukunjiao/tap
+brew trust yukunjiao/tap
+brew install threadle
 ```
 
-## Documentation
+Then start it:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+threadle
+```
+
+Type `exit` to quit the console.
+
+Prebuilt bottles are available for Apple Silicon macOS (Tahoe) and x86_64 Linux. On other platforms Homebrew builds from source, which needs the .NET SDK and takes a few minutes.
+
+## Upgrade
+
+```bash
+brew update
+brew upgrade threadle
+```
+
+## Uninstall
+
+```bash
+brew uninstall threadle
+brew untap yukunjiao/tap
+```
+
+## Issues
+
+- Problems with installing through Homebrew: open an issue in [this repository](https://github.com/YukunJiao/homebrew-tap/issues).
+- Problems with Threadle itself: report them [upstream](https://github.com/carlnordlund/Threadle/issues).
