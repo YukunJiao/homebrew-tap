@@ -42,7 +42,10 @@ jobs:
         id: update
         env:
           GH_TOKEN: ${{ secrets.TAP_BOT_TOKEN }}
-        run: echo "new=$(.github/scripts/${{ matrix.script }})" >> "$GITHUB_OUTPUT"
+        # Assign first: a failing $(...) inside echo's arguments wouldn't stop the step.
+        run: |
+          new=$(.github/scripts/${{ matrix.script }})
+          echo "new=$new" >> "$GITHUB_OUTPUT"
 
       - name: Open pull request
         if: steps.update.outputs.new != ''
