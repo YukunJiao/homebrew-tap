@@ -5,6 +5,7 @@ Homebrew formulae maintained by [@YukunJiao](https://github.com/YukunJiao).
 | Formula | Description |
 | --- | --- |
 | [`threadle`](Formula/threadle.rb) | CLI for [Threadle](https://github.com/carlnordlund/Threadle), a high-performance system for large, complex, multilayer network datasets |
+| [`threadle-dev`](Formula/threadle-dev.rb) | Development build of Threadle, built from the upstream dev branch |
 
 ## Install Threadle
 
@@ -38,10 +39,24 @@ Type `exit` to quit the console.
 brew upgrade threadle
 ```
 
+## Development build
+
+For testing unreleased changes. It installs as the command `threadle-dev`, alongside the stable `threadle`.
+
+```bash
+brew install --HEAD yukunjiao/tap/threadle-dev
+```
+
+Rebuild from the latest dev branch:
+
+```bash
+brew upgrade --fetch-HEAD threadle-dev
+```
+
 ## Uninstall
 
 ```bash
-brew uninstall threadle
+brew uninstall threadle threadle-dev   # whichever you installed
 brew untap yukunjiao/tap
 ```
 
