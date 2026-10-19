@@ -9,7 +9,7 @@ Homebrew formulae maintained by [@YukunJiao](https://github.com/YukunJiao).
 
 ## Install Threadle
 
-**Recommended: one command**
+**Recommended**
 
 ```bash
 brew install yukunjiao/tap/threadle
@@ -17,7 +17,7 @@ brew install yukunjiao/tap/threadle
 
 Using the full name taps this repository and trusts the `threadle` formula automatically.
 
-**Alternative: tap and trust first**
+**Alternative**
 
 ```bash
 brew tap yukunjiao/tap
