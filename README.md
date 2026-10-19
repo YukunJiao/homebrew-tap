@@ -41,7 +41,7 @@ brew upgrade threadle
 
 ## Development build
 
-For testing unreleased changes. It installs as the command `threadle-dev`, alongside the stable `threadle`.
+For testing unreleased changes. It installs as the command `threadle-dev`, alongside the stable `threadle`. To use it from threadleR or threadlepy, give them `threadle-dev` as the Threadle command instead of `threadle`.
 
 ```bash
 brew install --HEAD yukunjiao/tap/threadle-dev

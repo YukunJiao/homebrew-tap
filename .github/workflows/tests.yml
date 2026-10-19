@@ -10,12 +10,9 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macos-15-intel, macos-26 ]
-        include:
-          - os: ubuntu-latest
-            container: ghcr.io/homebrew/brew:main
+        # Bottles are only provided for Apple Silicon on current macOS.
+        os: [ macos-26 ]
     runs-on: ${{ matrix.os }}
-    container: ${{ matrix.container }}
     permissions:
       actions: read
       checks: read
