@@ -8,6 +8,16 @@ Homebrew formulae maintained by [@YukunJiao](https://github.com/YukunJiao).
 
 ## Install Threadle
 
+**Recommended: one command**
+
+```bash
+brew install yukunjiao/tap/threadle
+```
+
+Using the full name taps this repository and trusts the `threadle` formula automatically.
+
+**Alternative: tap and trust first**
+
 ```bash
 brew tap yukunjiao/tap
 brew trust yukunjiao/tap
@@ -22,12 +32,9 @@ threadle
 
 Type `exit` to quit the console.
 
-Prebuilt bottles are available for Apple Silicon macOS (Tahoe) and x86_64 Linux. On other platforms Homebrew builds from source, which needs the .NET SDK and takes a few minutes.
-
 ## Upgrade
 
 ```bash
-brew update
 brew upgrade threadle
 ```
 
